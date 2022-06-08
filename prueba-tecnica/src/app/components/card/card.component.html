@@ -1,0 +1,22 @@
+<div class="card-columns">
+    <div class="row">
+        <div class="card col-sm-4" *ngFor="let item of items | paginate: { itemsPerPage: 12, currentPage: pageActual }">
+            <div class="card-body">
+            <h3>Country: {{item.name.official}}</h3>
+            <p>Region: {{item.region}}</p>
+            <p>Sub Region: {{item.subregion}}</p>
+            <p>Capital: {{item.capital}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="space"></div>
+<div class="row">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+          <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+      </div>
+      <div class="col-md-3"></div>
+</div>
+  

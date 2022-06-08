@@ -1,0 +1,15 @@
+<div class="space"></div>
+
+<div class="row">
+    <div class="col">
+        <input type="text" #termino (keyup)="searchCode(termino.value)" class="form-control" placeholder="Buscar país por código">
+    </div>
+</div>
+
+<div class="space"></div>
+
+<app-error *ngIf="error"></app-error>
+
+<app-spinner *ngIf="spinner"></app-spinner>
+
+<app-card *ngIf="!spinner" [items]="countries"></app-card>
